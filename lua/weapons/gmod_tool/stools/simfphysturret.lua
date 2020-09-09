@@ -15,15 +15,6 @@ TOOL.ClientConVar[ "blastdamage" ] 	= "50"
 TOOL.ClientConVar[ "blasteffect" ] 	= "simfphys_tankweapon_explosion_micro"
 
 if CLIENT then
-	language.Add( "tool.simfphysturret.name", "Projectile Turret" )
-	language.Add( "tool.simfphysturret.desc", "A Tool used to spawn Turrets" )
-	language.Add( "tool.simfphysturret.0", "Left click to spawn or update a turret" )
-	language.Add( "tool.simfphysturret.1", "Left click to spawn or update a turret" )
-	
-	language.Add( "Cleanup_simfphysturrets", "simfphys Projectile Turret" )
-	language.Add( "Cleaned_simfphysturrets", "Cleaned up all simfphys Projectile Turrets" )
-	
-	language.Add( "SBoxLimit_simfphysturrets", "You've reached the Projectile Turret limit!" )
 end
 
 function TOOL:LeftClick( trace )
@@ -107,47 +98,47 @@ function TOOL.BuildCPanel( CPanel )
 
 	CPanel:AddControl( "Header", { Text = "#tool.simfphysturret.name", Description	= "#tool.simfphysturret.desc" }  )
 
-	CPanel:AddControl( "Slider",  { Label	= "Shoot Delay",
+	CPanel:AddControl( "Slider",  { Label	= "#tool.simfphysturret.shoot_delay",
 									Type	= "Float",
 									Min		= 0.2,
 									Max		= 2.0,
 									Command = "simfphysturret_delay" }	 )
 									
-	CPanel:AddControl( "Slider",  { Label	= "Damage",
+	CPanel:AddControl( "Slider",  { Label	= "#tool.simfphysturret.damage",
 									Type	= "Float",
 									Min		= 0,
 									Max		= 5000,
 									Command = "simfphysturret_damage" }	 )
 
-	CPanel:AddControl( "Slider",  { Label	= "Force",
+	CPanel:AddControl( "Slider",  { Label	= "#tool.simfphysturret.force",
 									Type	= "Float",
 									Min		= 0,
 									Max		= 10000,
 									Command = "simfphysturret_force" }	 )
 
-	CPanel:AddControl( "Slider",  { Label	= "Size",
+	CPanel:AddControl( "Slider",  { Label	= "#tool.simfphysturret.size",
 									Type	= "Float",
 									Min		= 3,
 									Max		= 15,
 									Command = "simfphysturret_size" }	 )
 
-	CPanel:AddControl( "Slider",  { Label	= "Max Deflect Angle",
+	CPanel:AddControl( "Slider",  { Label	= "#tool.simfphysturret.max_deflect",
 									Type	= "Float",
 									Min		= 0,
 									Max		= 45,
 									Command = "simfphysturret_deflectang" }	 )
 									
-	CPanel:AddControl( "Slider",  { Label	= "Blast Damage",
+	CPanel:AddControl( "Slider",  { Label	= "#tool.simfphysturret.blast_damage",
 									Type	= "Float",
 									Min		= 0,
 									Max		= 1500,
 									Command = "simfphysturret_blastdamage" }	 )
 
 
-	local BlastEffect = {Label = "Blast Effect", MenuButton = 0, Options={}, CVars = {}}
-	BlastEffect["Options"]["Small Explosion"]			= { simfphysturret_blasteffect = "simfphys_tankweapon_explosion_micro" }
-	BlastEffect["Options"]["Medium Explosion"]			= { simfphysturret_blasteffect = "simfphys_tankweapon_explosion_small" }
-	BlastEffect["Options"]["Large Explosion"]			= { simfphysturret_blasteffect = "simfphys_tankweapon_explosion" }
+	local BlastEffect = {Label = "#tool.simfphysturret.blast_effect", MenuButton = 0, Options={}, CVars = {}}
+	BlastEffect["Options"]["#tool.simfphysturret.small_explosion"]			= { simfphysturret_blasteffect = "simfphys_tankweapon_explosion_micro" }
+	BlastEffect["Options"]["#tool.simfphysturret.medium_explosion"]			= { simfphysturret_blasteffect = "simfphys_tankweapon_explosion_small" }
+	BlastEffect["Options"]["#tool.simfphysturret.large_explosionLarge Explosion"]			= { simfphysturret_blasteffect = "simfphys_tankweapon_explosion" }
 
 	CPanel:AddControl("ComboBox", BlastEffect )
 end

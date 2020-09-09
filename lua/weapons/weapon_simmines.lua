@@ -27,7 +27,7 @@ function SWEP:SetupDataTables()
 end
 
 if CLIENT then
-	SWEP.PrintName		= "Mines"
+	SWEP.PrintName		= "#simfphys_weapon_mine"
 	SWEP.Slot				= 4
 	SWEP.SlotPos			= 11
 	SWEP.IconLetter			= "k"

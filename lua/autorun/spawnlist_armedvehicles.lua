@@ -58,7 +58,7 @@ local V = {
 	Name = "HL2 Combine APC",
 	Model = "models/combine_apc.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 
 	Members = {
 		Mass = 3500,
@@ -171,7 +171,7 @@ local V = {
 	Name = "HL2 Jeep taucannon",
 	Model = "models/buggy.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 
 	Members = {
 		Mass = 1700,
@@ -244,7 +244,7 @@ local V = {
 	Name = "HL2 Jeep airboatgun",
 	Model = "models/buggy.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 
 	Members = {
 		Mass = 1700,
@@ -317,7 +317,7 @@ local V = {
 	Name = "Synergy Elite Jeep taucannon",
 	Model = "models/vehicles/buggy_elite.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 
 	Members = {
 		Mass = 1700,
@@ -414,7 +414,7 @@ local V = {
 	Name = "Synergy Elite Jeep airboatgun",
 	Model = "models/vehicles/buggy_elite.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 
 	Members = {
 		Mass = 1700,
@@ -511,7 +511,7 @@ local V = {
 	Name = "HL2 APC",
 	Model = "models/blu/conscript_apc.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 	SpawnOffset = Vector(0,0,50),
 
 	Members = {
@@ -769,7 +769,7 @@ list.Set( "simfphys_vehicles", "sim_fphys_conscriptapc_armed", V )
 local V = {
 	Name = "DIPRIP - Ratmobile",
 	Model = "models/ratmobile/ratmobile.mdl",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 	SpawnOffset = Vector(0,0,25),
 
 	Members = {
@@ -907,7 +907,7 @@ list.Set( "simfphys_vehicles", "sim_fphys_ratmobile", V )
 local V = {
 	Name = "DIPRIP - Chaos126p",
 	Model = "models/chaos126p/chaos126p.mdl",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 	SpawnOffset = Vector(0,0,30),
 
 	Members = {
@@ -1044,7 +1044,7 @@ list.Set( "simfphys_vehicles", "sim_fphys_chaos126p", V )
 local V = {
 	Name = "DIPRIP - Hedgehog",
 	Model = "models/hedgehog/hedgehog.mdl",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 	SpawnOffset = Vector(0,0,25),
 
 	Members = {
@@ -1181,7 +1181,7 @@ local V = {
 	Name = "DOD:S Tiger Tank",
 	Model = "models/blu/tanks/tiger.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 	SpawnOffset = Vector(0,0,60),
 	SpawnAngleOffset = 90,
 
@@ -1362,7 +1362,7 @@ local V = {
 	Name = "DOD:S Sherman Tank",
 	Model = "models/blu/tanks/sherman.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 	SpawnOffset = Vector(0,0,60),
 	SpawnAngleOffset = 90,
 
@@ -1592,7 +1592,7 @@ local V = {
 	Name = "Leopard 2A7",
 	Model = "models/blu/tanks/leopard2a7.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 	SpawnOffset = Vector(0,0,60),
 	SpawnAngleOffset = 90,
 
@@ -1769,7 +1769,7 @@ local V = {
 	Name = "T-90MS",
 	Model = "models/blu/tanks/t90ms.mdl",
 	Class = "gmod_sent_vehicle_fphysics_base",
-	Category = "Armed Vehicles",
+	Category = "#simfphys.category.armed_vehicles",
 	SpawnOffset = Vector(0,0,60),
 	SpawnAngleOffset = 90,
 

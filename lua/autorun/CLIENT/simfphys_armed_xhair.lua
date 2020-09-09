@@ -120,24 +120,24 @@ local function traceAndDrawCrosshair( startpos, endpos, vehicle, pod )
 		if vehicle:GetNWBool( "simfphys_NoRacingHud", false ) and ShowHud then
 			local fuel = vehicle:GetFuel() / vehicle:GetMaxFuel()
 			local Cruise = vehicle:GetIsCruiseModeOn() and " (cruise)" or ""
-			draw.SimpleText( "THR", "SIMFPHYS_ARMED_HUDFONT", 10, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+			draw.SimpleText( "#simfphys.hud_thr", "SIMFPHYS_ARMED_HUDFONT", 10, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			draw.SimpleText( math.Round(vehicle:GetThrottle() * 100).."%"..Cruise , "SIMFPHYS_ARMED_HUDFONT", 120, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			
-			draw.SimpleText( "SPD", "SIMFPHYS_ARMED_HUDFONT", 10, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+			draw.SimpleText( "#simfphys.hud_spd", "SIMFPHYS_ARMED_HUDFONT", 10, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			draw.SimpleText( printspeed, "SIMFPHYS_ARMED_HUDFONT", 120, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			
-			draw.SimpleText( "FUEL", "SIMFPHYS_ARMED_HUDFONT", 10, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+			draw.SimpleText( "#simfphys.hud_fuel", "SIMFPHYS_ARMED_HUDFONT", 10, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			draw.SimpleText( math.Round(vehicle:GetFuel()).."/"..vehicle:GetMaxFuel().."L", "SIMFPHYS_ARMED_HUDFONT", 120, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			
 			local Mode = vehicle:GetNWString( "WeaponMode", "-nowpn" )
 			if Mode ~= "-nowpn" then
-				draw.SimpleText( "WPN", "SIMFPHYS_ARMED_HUDFONT", 10, 85, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				draw.SimpleText( "#simfphys.hud_wpn", "SIMFPHYS_ARMED_HUDFONT", 10, 85, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				draw.SimpleText( Mode, "SIMFPHYS_ARMED_HUDFONT", 120, 85, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				
 				local Ammo = vehicle:GetNWInt( "CurWPNAmmo", -1 )
 				
 				if Ammo >= 0 then
-					draw.SimpleText( "AMMO", "SIMFPHYS_ARMED_HUDFONT", 10, 110, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+					draw.SimpleText( "#simfphys.hud_ammo", "SIMFPHYS_ARMED_HUDFONT", 10, 110, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 					draw.SimpleText( Ammo, "SIMFPHYS_ARMED_HUDFONT", 120, 110, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				end
 			end
@@ -247,14 +247,14 @@ local function traceAndDrawCrosshair( startpos, endpos, vehicle, pod )
 			
 			if vehicle:GetNWBool( "simfphys_NoHud", false ) and ShowHud then
 				local fuel = vehicle:GetFuel() / vehicle:GetMaxFuel()
-				local Cruise = vehicle:GetIsCruiseModeOn() and " (cruise)" or ""
-				draw.SimpleText( "THR", "SIMFPHYS_ARMED_HUDFONT", 10, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				local Cruise = vehicle:GetIsCruiseModeOn() and "#simfphys.hud_mode_cruise" or ""
+				draw.SimpleText( "#simfphys.hud_thr", "SIMFPHYS_ARMED_HUDFONT", 10, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				draw.SimpleText( math.Round(vehicle:GetThrottle() * 100).."%"..Cruise , "SIMFPHYS_ARMED_HUDFONT", 120, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				
-				draw.SimpleText( "SPD", "SIMFPHYS_ARMED_HUDFONT", 10, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				draw.SimpleText( "#simfphys.hud_spd", "SIMFPHYS_ARMED_HUDFONT", 10, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				draw.SimpleText(  printspeed, "SIMFPHYS_ARMED_HUDFONT", 120, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				
-				draw.SimpleText( "FUEL", "SIMFPHYS_ARMED_HUDFONT", 10, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				draw.SimpleText( "#simfphys.hud_fuel", "SIMFPHYS_ARMED_HUDFONT", 10, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				draw.SimpleText( math.Round(vehicle:GetFuel()).."/"..vehicle:GetMaxFuel().."L", "SIMFPHYS_ARMED_HUDFONT", 120, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			end
 		else
@@ -322,25 +322,25 @@ local function traceAndDrawCrosshair( startpos, endpos, vehicle, pod )
 		
 		if vehicle:GetNWBool( "simfphys_NoRacingHud", false ) and ShowHud then
 			local fuel = vehicle:GetFuel() / vehicle:GetMaxFuel()
-			local Cruise = vehicle:GetIsCruiseModeOn() and " (cruise)" or ""
-			draw.SimpleText( "THR", "SIMFPHYS_ARMED_HUDFONT", 10, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+			local Cruise = vehicle:GetIsCruiseModeOn() and "#simfphys.hud_mode_cruise" or ""
+			draw.SimpleText( "#simfphys.hud_thr", "SIMFPHYS_ARMED_HUDFONT", 10, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			draw.SimpleText( math.Round(vehicle:GetThrottle() * 100).."%"..Cruise , "SIMFPHYS_ARMED_HUDFONT", 120, 10, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			
-			draw.SimpleText( "SPD", "SIMFPHYS_ARMED_HUDFONT", 10, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+			draw.SimpleText( "#simfphys.hud_spd", "SIMFPHYS_ARMED_HUDFONT", 10, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			draw.SimpleText(  printspeed, "SIMFPHYS_ARMED_HUDFONT", 120, 35, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			
-			draw.SimpleText( "FUEL", "SIMFPHYS_ARMED_HUDFONT", 10, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+			draw.SimpleText( "#simfphys.hud_fuel", "SIMFPHYS_ARMED_HUDFONT", 10, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			draw.SimpleText( math.Round(vehicle:GetFuel()).."/"..vehicle:GetMaxFuel().."L", "SIMFPHYS_ARMED_HUDFONT", 120, 60, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			
 			local Mode = vehicle:GetNWString( "WeaponMode", "-nowpn" )
 			if Mode ~= "-nowpn" then
-				draw.SimpleText( "WPN", "SIMFPHYS_ARMED_HUDFONT", 10, 85, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				draw.SimpleText( "#simfphys.hud_wpn", "SIMFPHYS_ARMED_HUDFONT", 10, 85, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				draw.SimpleText( Mode, "SIMFPHYS_ARMED_HUDFONT", 120, 85, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				
 				local Ammo = vehicle:GetNWInt( "CurWPNAmmo", -1 )
 				
 				if Ammo >= 0 then
-					draw.SimpleText( "AMMO", "SIMFPHYS_ARMED_HUDFONT", 10, 110, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+					draw.SimpleText( "#simfphys.hud_ammo", "SIMFPHYS_ARMED_HUDFONT", 10, 110, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 					draw.SimpleText( Ammo, "SIMFPHYS_ARMED_HUDFONT", 120, 110, Color( 255, 235, 0, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				end
 			end
@@ -420,14 +420,14 @@ local function traceAndDrawCrosshair( startpos, endpos, vehicle, pod )
 			
 			if vehicle:GetNWBool( "simfphys_NoHud", false ) and ShowHud then
 				local fuel = vehicle:GetFuel() / vehicle:GetMaxFuel()
-				local Cruise = vehicle:GetIsCruiseModeOn() and " (cruise)" or ""
-				draw.SimpleText( "THR", "SIMFPHYS_ARMED_HUDFONT", 10, 10, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				local Cruise = vehicle:GetIsCruiseModeOn() and "#simfphys.hud_mode_cruise" or ""
+				draw.SimpleText( "#simfphys.hud_thr", "SIMFPHYS_ARMED_HUDFONT", 10, 10, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				draw.SimpleText( math.Round(vehicle:GetThrottle() * 100).."%"..Cruise , "SIMFPHYS_ARMED_HUDFONT", 120, 10, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				
-				draw.SimpleText( "SPD", "SIMFPHYS_ARMED_HUDFONT", 10, 35, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				draw.SimpleText( "#simfphys.hud_spd", "SIMFPHYS_ARMED_HUDFONT", 10, 35, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				draw.SimpleText( printspeed, "SIMFPHYS_ARMED_HUDFONT", 120, 35, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				
-				draw.SimpleText( "FUEL", "SIMFPHYS_ARMED_HUDFONT", 10, 60, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+				draw.SimpleText( "#simfphys.hud_fuel", "SIMFPHYS_ARMED_HUDFONT", 10, 60, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 				draw.SimpleText( math.Round(vehicle:GetFuel()).."/"..vehicle:GetMaxFuel().."L", "SIMFPHYS_ARMED_HUDFONT", 120, 60, Color( 20, 255, 20, 255 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
 			end
 		else
